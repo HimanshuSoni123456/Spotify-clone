@@ -1,0 +1,237 @@
+body {
+font-family: "Montserrat", sans-serif;
+margin: 0;
+background-color: black;
+color: #fff; /* Text color */
+overflow: hidden; /* Hides overflow text */
+}
+.main {
+display: flex;
+height: 100vh; /* Full viewport height */
+padding: 0.5rem;
+}
+.sidebar {
+background-color:#0000;
+width: 340px; /* Fixed width */
+border-radius: 1rem; /* 1rem = 16px , we are using in rem because we get responsive*/
+margin-right: 0.5rem;
+}
+.main-content {
+background-color: #121212;
+flex: 1; /* Takes the remaining space */
+border-radius: 1rem;
+overflow: auto; /* Scroll appears only when needed */
+padding: 0 1.5rem 0 1.5rem;/* This padding is for the card so that some distance is created between the card and the nav bar*/
+}
+.music-player {
+background-color: black;
+position: fixed; /* Stays at the bottom */
+bottom: 0; /* Aligns to the bottom */
+width: 100%;
+height: 72px;
+}
+.anchor{
+text-decoration: none;
+color: white;
+}
+.nav {
+background-color: #121212;
+border-radius: 1rem; /* 1rem = 16px */
+display: flex;
+flex-direction: column ;
+justify-content: center;
+height: 100px;
+padding:0.5rem 0.75rem;
+}
+.nav-option {
+line-height:2.5rem ;
+opacity: 0.7;
+padding: 0.5rem 0.75rem;
+}
+.nav-option:hover{
+line-height:2.5rem ;
+opacity: 1;
+}
+.nav-option i{
+font-size: 1.25rem;
+}
+.nav-option .anchor{
+font-size: 1rem;
+margin-left: 1rem;
+}
+.library{
+background-color: #121212;
+border-radius: 1rem; /* 1rem = 16px */
+height: 100%;
+margin-top: 0.5rem;
+padding: 0.5rem 0.75rem;
+}
+.options {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.lib-option img{
+height:1.25rem ;
+width: 1.25rem;
+}
+.icons{
+font-size: 1.25rem;
+opacity: 0.7;
+margin-right: 1rem;
+display: flex;
+}
+.icons i{
+opacity: 0.7;
+margin-right: 1rem;
+}
+.icons i:hover{
+opacity: 1;
+}
+.box{
+height :8rem;
+background-color: #232323;
+border-radius: 0.75rem;
+margin-top: 0.75rem;
+margin-bottom: 1.75rem;
+padding:0.75rem 1.0rem;
+}
+.box-p1{
+font-size: 1rem;
+font-weight: 500;
+}
+.box-p2{
+font-size:0.85rem;
+}
+.badge{
+background-color: #ffff;
+border: none;
+border-radius: 100px;
+padding:0.25rem 1rem;
+font-weight: 700;
+margin-top: 0.5rem;
+height: 2rem;
+width: fit-content;
+}
+.dark-badge{
+background-color: black;
+color: #fff;
+}
+.sticky-nav{
+position: sticky;
+top:0;
+background-color: #121212;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 1rem;
+padding-bottom: 1rem;
+z-index: 10; /*Sticky-nav bar is clashing with the text when we are scolling down....if we put z-index to positive then sticky nav will come on the top and text will pass from down side*/
+}
+.sticky-nav-icons{
+margin-left: 0.75rem;
+}
+.sticky-nav-options{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.nav-item { /*Sticky nav options ke internal button ko margin*/
+margin-right: 1rem;
+}
+@media(max-width:1000px){ /*This media query is use to hide the top right button and premium button if we inspect and decrease it to the 1000px*/
+.hide{
+display:none
+}
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*Now we will write the code for the cards */
+.card{
+background-color: #232323;
+width: 150px;
+border-radius: 0.5rem;
+padding: 1rem;
+margin-left: 1.5rem;
+margin-top: 1rem;
+}
+.cards-container {
+display: flex;
+flex-wrap: wrap; /*Size of the cards will remain same extra cards will go to the next row if we do inspect */
+}
+.card-img{
+width: 100%;
+border-radius: 0.5rem;
+
+}
+.card-title{
+font-weight: 600;
+}
+.card-info{
+font-size: 0.75rem;
+opacity: 0.5;
+}
+.footer{
+height: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.line{
+height: 50%;
+width: 90%;
+border-top:  1px solid white;
+opacity: 0.4;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*Now we will write the code for the music player part */
+.music-player{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.album{
+width:25%;
+}
+.player{
+width: 50%;
+}
+.controls{
+width:25%;
+}
+.player-controls{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.player-control-icon {
+height:1rem;
+margin-right:1.75rem;
+opacity: 0.7;
+}
+.player-control-icon:hover {
+opacity:1;
+}
+.playback-bar{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.progress-bar{
+    width:70%;
+    appearance: none;/*Default properties initial jo milti ha ausko remove ker detii ha yah property so that we can add our personal styling*/
+background-color: transparent;
+cursor: pointer;/*hand-symbol*/
+}
+.progress-bar::-webkit-slider-runnable-track{/*for the css of the track this syntax we are using */
+background-color:#ddd ;
+height:0.2rem ;
+border-radius: 100px;
+}
+.progress-bar::-webkit-slider-thumb{/*for the css of the thumb-ball we have to add this syntax */
+appearance: none;     /*To remove the default settings of the thumb */
+height: 1rem;
+width: 1rem;
+background-color: #1bd760;
+border-radius:50% ;
+margin-top:-6px;
+}
