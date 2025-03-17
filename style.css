@@ -235,3 +235,29 @@ background-color: #1bd760;
 border-radius:50% ;
 margin-top:-6px;
 }
+.music-player .album i{
+justify-content: center;
+align-items:center;
+opacity: 0.5;
+margin-left: 180px;
+margin-top: 70px;
+}
+.music-player .album i:hover{
+opacity: 1;
+}
+.song-pic{
+height:3rem;
+width:3rem;
+display: flex;
+justify-content: center;
+margin-left: 2rem;
+margin-bottom: 40px;
+margin-top: 0.5px;
+align-items: center;
+}
+.para{
+font-size: 1rem;
+font-weight:bold
+
+}
+
